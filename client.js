@@ -159,18 +159,18 @@ window.__ModuleLoader__.load({
     }
 
     /**
-     * Four-significant-digit amount for the harness-wide "total" column, so a
-     * large all-session figure keeps four meaningful digits instead of a fixed
-     * tail of decimals.
+     * "Total" column amount: four significant digits at or above 1, three
+     * decimals below 1, so the figure always reads as four digits across the
+     * column while small values keep their precision.
      * @param value - amount in the configured currency.
-     * @param digits - significant digits to keep.
      * @returns display text without the currency sign.
      */
-    function formatSignificant(value, digits) {
+    function formatTotalAmount(value) {
       const safe = typeof value === 'number' && Number.isFinite(value) ? value : 0
-      if (safe === 0) return (0).toFixed(digits - 1)
-      const exponent = Math.floor(Math.log10(Math.abs(safe)))
-      const decimals = Math.max(0, Math.min(8, digits - 1 - exponent))
+      const magnitude = Math.abs(safe)
+      if (magnitude < 1) return safe.toFixed(3)
+      const exponent = Math.floor(Math.log10(magnitude))
+      const decimals = Math.max(0, Math.min(8, 3 - exponent))
       return safe.toFixed(decimals)
     }
 
@@ -452,7 +452,7 @@ window.__ModuleLoader__.load({
       const turns = (count) => text(t, 'value.turns', { count })
       // The harness-wide column keeps four significant digits so a large total
       // stays meaningful instead of padding out a fixed decimal tail.
-      const harnessMoney = (value) => `${currency}${formatSignificant(value, 4)}`
+      const harnessMoney = (value) => `${currency}${formatTotalAmount(value)}`
       const totalsTable = renderTable('totals', className.tableRight, [text(t, 'col.session'), text(t, 'col.total')], [
         {
           label: text(t, 'row.dialogTurns'),
