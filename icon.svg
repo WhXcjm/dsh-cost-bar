@@ -1,15 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Cost meter">
-  <!-- white tile with a hairline edge so it reads on white cards too -->
-  <rect x="0.5" y="0.5" width="63" height="63" rx="13.5" fill="#FFFFFF" stroke="#E4E7EC" stroke-width="1"/>
-
-  <!-- banknote outline -->
-  <rect x="10.5" y="20.5" width="43" height="25" rx="5" fill="none" stroke="#4D6BFE" stroke-width="2.6"/>
-
-  <!-- CNY mark -->
-  <g fill="none" stroke="#4D6BFE" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M26 26.2 L32 32.6 L38 26.2"/>
-    <path d="M32 32.6 L32 40.6"/>
-    <path d="M27 34.6 L37 34.6"/>
-    <path d="M27 38.9 L37 38.9"/>
-  </g>
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="15.5" cy="20.5" r="11" fill="url(#dshcm1-blue)"/>
+  <path d="M15.5 6.5A14 14 0 0 1 27.624 27.5" stroke="url(#dshcm1-teal)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M10.8 14.5L15.5 20L20.2 14.5M15.5 20V26.5M11.8 21H19.2M11.8 24H19.2" stroke="#FFFFFF" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <defs>
+    <linearGradient id="dshcm1-blue" x1="9" y1="10" x2="24" y2="31" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7AC2FF"/>
+      <stop offset="1" stop-color="#4A65E8"/>
+    </linearGradient>
+    <linearGradient id="dshcm1-teal" x1="15.5" y1="6.5" x2="29.5" y2="27.5" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#45D9E7"/>
+      <stop offset="1" stop-color="#67C7FE"/>
+    </linearGradient>
+  </defs>
 </svg>
