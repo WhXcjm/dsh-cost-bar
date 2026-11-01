@@ -1,0 +1,9 @@
+- insert:
+    - id: cost-meter
+      name: 'dsh-cost-meter'
+      config:
+        currency: '¥'
+        # Today's estimated spend budget; 0 hides the progress row in the dialog.
+        dailyBudget: 0
+        # 价格表在包内的 prices.json 中维护（官方价目表，含峰谷计价），
+        # 修改后数秒内热加载，无需重启。

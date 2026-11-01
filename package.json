@@ -1,0 +1,53 @@
+{
+  "name": "dsh-cost-meter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DeepSeek Harness plugin: composer-dock cost meter with DeepSeek's official peak/off-peak price table and today's spend breakdown.",
+  "type": "module",
+  "license": "MIT",
+  "author": "WhXcjm",
+  "homepage": "https://github.com/WhXcjm/dsh-cost-meter#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WhXcjm/dsh-cost-meter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WhXcjm/dsh-cost-meter/issues"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "cost",
+    "usage",
+    "billing",
+    "composer"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "prices.json",
+    "locale/*.json",
+    "icon.svg",
+    "design/*"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  }
+}

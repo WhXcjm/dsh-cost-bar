@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Cost meter">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#607BFF"/>
+      <stop offset="0.55" stop-color="#4A63F5"/>
+      <stop offset="1" stop-color="#3348D8"/>
+    </linearGradient>
+    <radialGradient id="sheen" cx="0.26" cy="0.12" r="0.85">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.40"/>
+      <stop offset="0.55" stop-color="#FFFFFF" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="note" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#E8EDFF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- brand tile -->
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <rect width="64" height="64" rx="14" fill="url(#sheen)"/>
+
+  <!-- second banknote peeking out for depth -->
+  <g transform="rotate(-10 32 26)">
+    <rect x="20" y="11" width="38" height="24" rx="5" fill="#FFFFFF" fill-opacity="0.22"/>
+  </g>
+
+  <!-- main banknote with a crisp inner rule -->
+  <rect x="11" y="21" width="42" height="26" rx="5.5" fill="url(#note)"/>
+  <rect x="14" y="24" width="36" height="20" rx="3.6" fill="none" stroke="#3F5BE8" stroke-opacity="0.22" stroke-width="1.1"/>
+
+  <!-- CNY mark -->
+  <g fill="none" stroke="#3F5BE8" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M26.6 27.4 L32 32.6 L37.4 27.4"/>
+    <path d="M32 32.6 L32 42.2"/>
+    <path d="M27.4 34.9 L36.6 34.9"/>
+    <path d="M27.4 38.4 L36.6 38.4"/>
+  </g>
+
+  <!-- sparkle accent -->
+  <path d="M51.5 12.2 L52.7 15.6 L56.1 16.8 L52.7 18 L51.5 21.4 L50.3 18 L46.9 16.8 L50.3 15.6 Z"
+        fill="#FFFFFF" fill-opacity="0.85"/>
+</svg>

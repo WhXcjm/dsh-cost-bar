@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Cost Meter",
+    "description": "Shows this turn's and this session's cost beside the composer statistics, with today's spend for this session and every session."
+  }
+}
