@@ -14,7 +14,7 @@
  * earlier runs are backfilled from durable session storage so "today, all
  * sessions" includes them.
  *
- * @module @local/dsh-cost-meter
+ * @module dsh-cost-meter
  */
 
 import fs from 'node:fs'

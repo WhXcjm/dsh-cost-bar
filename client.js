@@ -4,7 +4,7 @@
  * so the browser never folds session events itself.
  */
 window.__ModuleLoader__.load({
-  id: '@local/dsh-cost-meter',
+  id: 'dsh-cost-meter',
   factory(require) {
     const React = require('react')
     const h = React.createElement
