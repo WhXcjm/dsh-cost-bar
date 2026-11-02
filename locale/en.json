@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Cost Meter",
-    "description": "Shows this turn's and this session's cost beside the composer statistics, with today's spend for this session and every session."
+    "title": "Cost Bar",
+    "description": "Shows this turn's and this session's estimated spend in the composer bar, with a breakdown by billing item and a comparison between this session and all sessions."
   }
 }

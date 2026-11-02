@@ -1,10 +1,10 @@
 /**
- * Client half of the cost meter: the composer-dock cost pill and its details
+ * Client half of the cost bar: the composer-dock cost pill and its details
  * dialog. Figures come from the Host half over the authenticated `/api` bridge,
  * so the browser never folds session events itself.
  */
 window.__ModuleLoader__.load({
-  id: 'dsh-cost-meter',
+  id: 'dsh-cost-bar',
   factory(require) {
     const React = require('react')
     const h = React.createElement
@@ -19,7 +19,7 @@ window.__ModuleLoader__.load({
       createPortal = null
     }
 
-    const NS = 'cost-meter'
+    const NS = 'cost-bar'
 
     /**
      * The active money mark: Heroicons `banknotes` (MIT), outline 24px grid at
@@ -256,7 +256,7 @@ window.__ModuleLoader__.load({
           const next = new AbortController()
           controller = next
           try {
-            const url = new URL('/api/cost-meter/snapshot', window.location.origin)
+            const url = new URL('/api/cost-bar/snapshot', window.location.origin)
             url.searchParams.set('session', sessionId)
             const response = await fetch(url.href, {
               signal: next.signal,
@@ -268,7 +268,7 @@ window.__ModuleLoader__.load({
             const payload = await response.json()
             if (disposed || next.signal.aborted) return
             if (payload === null || typeof payload !== 'object' || payload.ok !== true) {
-              throw new Error(typeof payload?.error === 'string' ? payload.error : 'cost meter unavailable')
+              throw new Error(typeof payload?.error === 'string' ? payload.error : 'cost bar unavailable')
             }
             setState({ data: payload, failed: false })
             const hidden = typeof document !== 'undefined' && document.visibilityState === 'hidden'
@@ -510,7 +510,7 @@ window.__ModuleLoader__.load({
         className: className.panel,
         role: 'dialog',
         'aria-label': text(t, 'dialog.title'),
-        'data-cost-meter': 'dialog',
+        'data-cost-bar': 'dialog',
         style: position === null ? MEASURE_STYLE : { left: position.left, top: position.top },
       }, [
         header,
@@ -600,7 +600,7 @@ window.__ModuleLoader__.load({
           className,
         }))
       }
-      return h('span', { ref: rootRef, className: className.anchor, 'data-cost-meter': 'pill' }, children)
+      return h('span', { ref: rootRef, className: className.anchor, 'data-cost-bar': 'pill' }, children)
     }
 
     return {

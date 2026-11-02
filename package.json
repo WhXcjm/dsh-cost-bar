@@ -1,18 +1,18 @@
 {
-  "name": "dsh-cost-meter",
+  "name": "dsh-cost-bar",
   "version": "1.0.0",
   "private": true,
-  "description": "DeepSeek Harness plugin: composer-dock cost meter with DeepSeek's official peak/off-peak price table and today's spend breakdown.",
+  "description": "DeepSeek Harness plugin: a composer-bar cost pill with this turn's and this session's estimated spend, a two-column breakdown dialog, and a hot-reloadable peak/off-peak price table.",
   "type": "module",
   "license": "MIT",
   "author": "WhXcjm",
-  "homepage": "https://github.com/WhXcjm/dsh-cost-meter#readme",
+  "homepage": "https://github.com/WhXcjm/dsh-cost-bar#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WhXcjm/dsh-cost-meter.git"
+    "url": "git+https://github.com/WhXcjm/dsh-cost-bar.git"
   },
   "bugs": {
-    "url": "https://github.com/WhXcjm/dsh-cost-meter/issues"
+    "url": "https://github.com/WhXcjm/dsh-cost-bar/issues"
   },
   "keywords": [
     "deepseek-harness",

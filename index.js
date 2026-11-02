@@ -1,5 +1,5 @@
 /**
- * Host half of the cost meter: prices durable provider usage into money.
+ * Host half of the cost bar: prices durable provider usage into money.
  *
  * The harness records tokens, never money, so this meter folds every settled
  * attempt's usage exactly like the `tokenUsage` session projection and applies
@@ -14,7 +14,7 @@
  * earlier runs are backfilled from durable session storage so "today, all
  * sessions" includes them.
  *
- * @module dsh-cost-meter
+ * @module dsh-cost-bar
  */
 
 import fs from 'node:fs'
@@ -391,7 +391,7 @@ export function applySessionEvent(state, event, billing) {
 }
 
 /**
- * Host half of the cost meter bundle.
+ * Host half of the cost bar bundle.
  * @param ctx - plugin context.
  * @param config - raw bundle configuration.
  */
@@ -407,7 +407,7 @@ export function apply(ctx, config) {
 
   ctx.effect(() => () => {
     disposed = true
-  }, 'cost-meter: lifetime')
+  }, 'cost-bar: lifetime')
 
   /** @returns the durable session storage service, when composed. */
   const persistence = () => ctx.get('sessionPersistence')
@@ -685,7 +685,7 @@ export function apply(ctx, config) {
     const connection = scope.connection
     if (connection?.fetch === undefined) return
     scope.effect(() => connection.fetch.register({
-      path: '/api/cost-meter/snapshot',
+      path: '/api/cost-bar/snapshot',
       methods: ['GET'],
       requestBody: 'buffered',
       fetch: async (request) => {
@@ -703,9 +703,9 @@ export function apply(ctx, config) {
           })
         }
       },
-    }), 'cost-meter: snapshot route')
+    }), 'cost-bar: snapshot route')
   })
 }
 
-export const name = 'cost-meter'
+export const name = 'cost-bar'
 export const inject = ['sessions']
