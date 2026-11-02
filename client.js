@@ -606,7 +606,7 @@ window.__ModuleLoader__.load({
     return {
       inject: ['slots', 'locale'],
       apply(ctx) {
-        ctx.effect(() => ctx.locale.register(NS, { zh, en }), 'cost-meter: dictionaries')
+        ctx.effect(() => ctx.locale.register(NS, { zh, en }), 'cost-bar: dictionaries')
         ctx.slots.inject('conversation.composer.dock', () => ctx.slots.register({
           name: 'conversation.composer.dock',
           id: 'cost',
