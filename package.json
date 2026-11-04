@@ -1,7 +1,6 @@
 {
   "name": "dsh-cost-bar",
   "version": "1.0.0",
-  "private": true,
   "description": "DeepSeek Harness plugin: a composer-bar cost pill with this turn's and this session's estimated spend, a two-column breakdown dialog, and a hot-reloadable peak/off-peak price table.",
   "type": "module",
   "license": "MIT",

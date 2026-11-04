@@ -46,11 +46,19 @@ Token 取自会话日志里每次模型调用结算的用量（`assistant/messag
 
 需要带 `sessions`、`sessionPersistence`、`connection` 服务的 DSH 桌面或 Web 组合。插件通过已认证的 `/api` 通道暴露只读快照，不新增端口。
 
+从 npm 安装：
+
+```bash
+npm install dsh-cost-bar
+```
+
+或从源码安装：
+
 ```bash
 git clone https://github.com/WhXcjm/dsh-cost-bar.git
 ```
 
-在 DSH 的插件页把这个目录装为本地包（或让 Agent 用 `plugin_manager` 的 `install_bundle` 指向该目录），重载插件后信息栏出现成本条。
+在 DSH 的插件页把 `dsh-cost-bar` 装为插件（npm 包名或本地目录均可，Agent 也可用 `plugin_manager` 的 `install_bundle`），重载插件后信息栏出现成本条。
 
 ## 配置
 
